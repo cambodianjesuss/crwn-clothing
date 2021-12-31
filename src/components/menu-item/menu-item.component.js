@@ -2,7 +2,9 @@ import React from "react";
 import './menu-item.styles.scss';
 
 const MenuItem = ({ title, imageUrl, size }) => (
+
   <div className={`${size} menu-item`}>
+    {console.log(size)}
     <div 
       className="background-image" 
       style={{
@@ -17,3 +19,5 @@ const MenuItem = ({ title, imageUrl, size }) => (
 )
 
 export default MenuItem;
+
+// size prop will only show class value when passed, otherwise undefined
