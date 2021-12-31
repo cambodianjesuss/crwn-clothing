@@ -2,9 +2,9 @@ import React from "react";
 import { withRouter } from 'react-router-dom';
 import './menu-item.styles.scss';
 
-const MenuItem = ({ title, imageUrl, size }) => (
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match}) => (
 
-  <div className={`${size} menu-item`}>
+  <div className={`${size} menu-item`} onClick={()=> history.push(`${match.url}${linkUrl}`)}>
     {console.log(size)}
     <div 
       className="background-image" 
@@ -19,6 +19,6 @@ const MenuItem = ({ title, imageUrl, size }) => (
   </div>
 )
 
-export default withRouter(MenuItem); // With router to avoice prop tunneling 
+export default withRouter(MenuItem); // With router to avoice prop tunneling /drilling
 
 // size prop will only show class value when passed, otherwise undefined
