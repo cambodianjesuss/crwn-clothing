@@ -21,4 +21,5 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match}) => (
 
 export default withRouter(MenuItem); // With router to avoice prop tunneling /drilling
 
+// Instead of passing  down history from the main app component as props all the way down, for use of props (history, match) -- we included withRouter functionality 
 // size prop will only show class value when passed, otherwise undefined
