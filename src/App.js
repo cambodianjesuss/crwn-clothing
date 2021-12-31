@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-//https://reactrouter.com/docs/en/v6/upgrading/v5
+//https://reactrouter.com/docs/en/v6/upgrading/v5 Switch => Routes v4 - v5^
 import './App.css';
 import Homepage from './pages/homepage/homepage.component';
 
