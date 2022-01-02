@@ -53,7 +53,6 @@ class SignIn extends React.Component {
             required 
           />
 
-
           <CustomButton type="submit" value="Submit Form">SIGN IN</CustomButton>
         </form>
       </div>
