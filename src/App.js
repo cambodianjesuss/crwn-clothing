@@ -19,11 +19,20 @@ class App extends React.Component{
     }
   }
 
+  // Sign out in case memory leaks et
+  unsubscribeFromAuth = null;  
+
   componentDidMount(){
     // Set the state of currentUser to the callback result of auth
-    auth.onAuthStateChanged(user => {
-      this.setState({currentUser: user})
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({currentUser: user});
+
+      console.log(user);
     })
+  }
+
+  componentWillUnmount(){
+    this.unsubscribeFromAuth();
   }
 
   render(){
