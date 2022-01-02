@@ -16,7 +16,14 @@ class SignIn extends React.Component {
     e.prventDefault();
 
     this.setState({ email: '', password: ''})
-}
+  }
+
+  handleChange = (e) => {
+    const { value, name } = e.target;
+    
+    // Dyanmically set the name of input with value;
+    this.setState({ [name]: value})
+  }
 
   render(){
     return(
