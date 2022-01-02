@@ -19,6 +19,13 @@ class App extends React.Component{
     }
   }
 
+  componentDidMount(){
+    // Set the state of currentUser to the callback result of auth
+    auth.onAuthStateChanged(user => {
+      this.setState({currentUser: user})
+    })
+  }
+
   render(){
     return (
       <div>
