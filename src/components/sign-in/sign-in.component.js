@@ -15,7 +15,7 @@ class SignIn extends React.Component {
   handleSubmit = (e) => {
     e.prventDefault();
 
-    this.setState({ email: '', password: ''})
+    this.setState({ email: '', password: ''}) // Clears fields
   }
 
   handleChange = (e) => {
@@ -38,14 +38,14 @@ class SignIn extends React.Component {
             value={this.state.email} 
             onChange={this.handleChange}
             required />
-          <label for="email">Email</label>
+          <label>Email</label>
           <input 
             name="password" 
             type="password" 
             value={this.state.password} 
             onChange={this.handleChange}
             required />
-          <label for="password">Password</label>
+          <label>Password</label>
 
           <input type="submit" value="Submit Form" />
         </form>
