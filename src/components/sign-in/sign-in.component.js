@@ -3,16 +3,20 @@ import React from "react";
 import './sign-in.styles.scss';
 
 class SignIn extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
 
-    this.state = {}
+    this.state = {
+      email: '',
+      password: ''
+    }
   }
 
   render(){
     return(
-      <div>
-        Sign In Component
+      <div className="sign-in">
+        <h1>I already have an accound</h1>
+        <span>Sign in with your email and password</span>
       </div>
     )
   }
