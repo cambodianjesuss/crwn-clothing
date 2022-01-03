@@ -12,20 +12,15 @@ const config = {
   measurementId: "G-H3E5YNXQ7Q"
 };
 
-
-
-// Create profile from google sign in or search for a doument/collection
 export const createUserProfileDocument = async (userAuth, additionalData)=>{
   if(!userAuth) return;
 
-  // Seach is user exists -- inside body of response, exist property will be true
   const userRef = firestore.doc(`users/${userAuth.uid}`);
 
   const snapShot = await userRef.get();
 
-  // If user doesn't exist, we will create a user in the firestore db based form userAuth
   if(!snapShot.exists){
-    const { displayName, email } = userAuth; // This is from the first authentication object
+    const { displayName, email } = userAuth;
     const createdAt = new Date();
 
     try {
@@ -45,12 +40,8 @@ export const createUserProfileDocument = async (userAuth, additionalData)=>{
 
 firebase.initializeApp(config);
 
-// Export imports for use in our app
-
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-
-// Authentication
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
