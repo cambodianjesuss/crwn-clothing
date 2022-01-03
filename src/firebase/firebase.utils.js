@@ -12,6 +12,13 @@ const config = {
   measurementId: "G-H3E5YNXQ7Q"
 };
 
+// Create profile from google sign in or search for a doument/collection
+export const createUserProfileDocument = async (userAuth, additionalData)=>{
+  if(!userAuth) return;
+
+  console.log(firestore.doc('users/1'));
+}
+
 firebase.initializeApp(config);
 
 // Export imports for use in our app
