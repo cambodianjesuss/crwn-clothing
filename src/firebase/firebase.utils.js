@@ -49,7 +49,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
   }
 
-  return userRef;
+  return userRef; // Aka, snapshot
 };
 
 firebase.initializeApp(config);
