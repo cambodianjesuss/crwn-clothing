@@ -12,7 +12,21 @@ const config = {
   measurementId: "G-H3E5YNXQ7Q",
 };
 
+/**
+ *
+ * @param {*} userAuth
+ * @param {*} additionalData
+ * @returns userRef
+ *
+ * When componentDidMount(), we run the firebase auth listener (App.js)
+ * auth.onAuthStateChange() we async wait authenticated user, which we need the uid (App.js)
+ * Then in this file, we recieve the auth user uid, and search for doc ref, and check if
+ * snapShot exist (access to actual document/for write).
+ * If not snapshot, we create set the fields to parts of the auth object, aka userAuth
+ */
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
+  // Return out of block if not authenticated
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
