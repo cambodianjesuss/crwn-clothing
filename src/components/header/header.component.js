@@ -19,10 +19,15 @@ const Header = ( {currentUser} ) => (
       <Link className='option' to='/contact'>CONCTACT</Link>
       {
         // Sign In/Sign Out if currentUser has null signed in
+
+        
         currentUser ?
           <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
         :
           <Link className='option' to='/signin'>SIGN IN</Link>
+      }
+      {
+        console.log(currentUser)
       }
     </div>
   </div>

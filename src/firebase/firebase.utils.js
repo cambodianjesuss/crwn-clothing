@@ -12,6 +12,8 @@ const config = {
   measurementId: "G-H3E5YNXQ7Q"
 };
 
+
+
 // Create profile from google sign in or search for a doument/collection
 export const createUserProfileDocument = async (userAuth, additionalData)=>{
   if(!userAuth) return;
@@ -51,9 +53,7 @@ export const firestore = firebase.firestore();
 // Authentication
 
 const provider = new firebase.auth.GoogleAuthProvider();
-// Trigger the google pop-up parementers
-provider.setCustomParameters({propt: 'select_acccount'})
-// Call the auth.signIn with my provier set object
+provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
