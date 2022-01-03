@@ -25,10 +25,7 @@ class App extends React.Component{
   componentDidMount(){
     // Set the state of currentUser to the callback result of auth
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async user => {
-      
       createUserProfileDocument(user)
-
-      console.log(user);
     })
   }
 

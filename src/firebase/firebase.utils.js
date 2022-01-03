@@ -16,7 +16,29 @@ const config = {
 export const createUserProfileDocument = async (userAuth, additionalData)=>{
   if(!userAuth) return;
 
-  console.log(firestore.doc('users/1'));
+  // Seach is user exists -- inside body of response, exist property will be true
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+
+  const snapShot = await userRef.get();
+
+  // If user doesn't exist, we will create a user in the firestore db based form userAuth
+  if(!snapShot.exists){
+    const { displayName, email } = userAuth; // This is from the first authentication object
+    const createdAt = new Date();
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData
+      })
+    } catch (error) {
+      console.log('Error creating user', error.message);
+    }
+  }
+
+  return userRef;
 }
 
 firebase.initializeApp(config);
