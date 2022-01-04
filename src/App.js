@@ -37,7 +37,7 @@ class App extends React.Component {
                 ...snapShot.data(),
               },
             },
-            () => console.log("Snapshot: ", snapShot),
+            () => console.log("Snapshot Data Method: ", snapShot.data()),
           );
         });
       }
