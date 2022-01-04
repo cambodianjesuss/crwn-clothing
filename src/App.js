@@ -41,7 +41,7 @@ class App extends React.Component {
           );
         });
       }
-      this.setState({ currentUser: userAuth }); // null
+      this.setState({ currentUser: userAuth }); // null (signed out)
     });
   }
 
