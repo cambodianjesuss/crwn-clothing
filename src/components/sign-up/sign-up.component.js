@@ -36,6 +36,7 @@ class SignUp extends React.Component {
       );
 
       await createUserProfileDocument(user, { displayName });
+      // After user is created with profile, clear state since user is authenticated
       this.setState({
         displayName,
         email: "",
@@ -48,7 +49,7 @@ class SignUp extends React.Component {
   };
 
   handleChange = (event) => {
-    // Grab all input attributes of name
+    // Grab all input attributes of name & set it's state
     const { name, value } = event.target;
 
     this.setState({ [name]: value });
