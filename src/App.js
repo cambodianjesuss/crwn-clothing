@@ -57,6 +57,7 @@ class App extends React.Component {
   }
 }
 
+// Passing setCurrentUser Action to dispatch
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });

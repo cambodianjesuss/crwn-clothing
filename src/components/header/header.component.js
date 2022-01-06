@@ -40,8 +40,11 @@ const Header = ({ currentUser }) => (
   </div>
 );
 
+// Mapping state props to use it's current data with no actions
+
 const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser,
 });
 
+// Using connect middleware to map our state to props
 export default connect(mapStateToProps)(Header);
