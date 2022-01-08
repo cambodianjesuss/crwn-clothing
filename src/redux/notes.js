@@ -27,4 +27,4 @@ ReactDOM.render(
 
 // 3) Once we wrapped our all with the Provider component, we need to create a store and pass it
 
-// 3a) Before we pass
+// 3a) Before we create our store with middleware, we will create actions and reduces for our store
