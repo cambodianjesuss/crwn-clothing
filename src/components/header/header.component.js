@@ -10,6 +10,7 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 
 import "./header.styles.scss";
 
+// currentUser passed in as props from 'mapStateToProps'
 const Header = ({ currentUser }) => (
   <div className="header">
     <Link className="logo-container" to="/">
