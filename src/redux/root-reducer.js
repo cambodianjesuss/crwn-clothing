@@ -3,7 +3,7 @@ import { combineReducers } from "redux";
 import userReducer from "./user/user.reducer";
 
 export default combineReducers({
-  user: userReducer, // Object from which we set it's state
+  user: userReducer, // Object from which we set it's state - the return from userReducer is currentUser
 });
 
 /**
