@@ -15,4 +15,10 @@ const userReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
+// We are exporting the an opbject is a property of currentUser
+/**
+ * {
+ *  currentUser: { ... }
+ * }
+ */
 export default userReducer;
