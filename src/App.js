@@ -10,6 +10,9 @@ import ShopPage from "./pages/shop/shop.component";
 import SignInAndSignUp from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/header/header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+
+// Since we are providing the action here, we are 'setting' the state to dispatch
+// This action will return return the payload with an action to match update reducer
 import { setCurrentUser } from "./redux/user/user.actions";
 
 class App extends React.Component {
