@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 
 // Import firebase auth from util file
 import { auth } from "../../firebase/firebase.utils";
+import CartIcon from "../cart-icon/cart-icon.component";
 
 // Import non react exported file
 import { ReactComponent as Logo } from "../../assets/crown.svg";
@@ -40,6 +41,7 @@ const Header = ({ currentUser }) => (
         )
       }
       {console.log(currentUser)}
+      <CartIcon />
     </div>
   </div>
 );
