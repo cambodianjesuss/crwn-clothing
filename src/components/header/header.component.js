@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+// add connect component to provide 'user' state
 import { connect } from "react-redux";
 
 // Import firebase auth from util file
