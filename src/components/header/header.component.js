@@ -17,7 +17,7 @@ import "./header.styles.scss";
 
 // currentUser passed in as props from 'mapStateToProps'
 // all we are doing here is getting the state, not triggering an actions
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUserProp, hiddenProp }) => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="logo" />
@@ -32,7 +32,7 @@ const Header = ({ currentUser, hidden }) => (
       {
         // Sign In/Sign Out if currentUser has null signed in
 
-        currentUser ? (
+        currentUserProp ? (
           <div className="option" onClick={() => auth.signOut()}>
             SIGN OUT
           </div>
@@ -42,18 +42,18 @@ const Header = ({ currentUser, hidden }) => (
           </Link>
         )
       }
-      {console.log(currentUser)}
+      {console.log(currentUserProp)}
       <CartIcon />
     </div>
-    {hidden ? null : <CartDropdown />}
+    {hiddenProp ? null : <CartDropdown />}
   </div>
 );
 
 // Mapping state props to use it's current data with no actions
-
+// For clarity, I've added the prop name
 const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-  currentUser: currentUser,
-  hidden: hidden,
+  currentUserProp: currentUser,
+  hiddenProp: hidden,
 });
 
 // Using connect middleware to map our state to props
