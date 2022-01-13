@@ -6,7 +6,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
     case CartActionTypes.TOGGLE_CART_HIDDEN: {
       return {
         ...state,
-        hidden: !state.hidden, // Opposite of what the state is
+        hidden: !state.hidden, // Opposite of what the state is -- toggles boolean value
       };
     }
     default: {
