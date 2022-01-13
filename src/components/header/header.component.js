@@ -51,8 +51,9 @@ const Header = ({ currentUser }) => (
 
 // Mapping state props to use it's current data with no actions
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser: currentUser,
+  hidden: hidden,
 });
 
 // Using connect middleware to map our state to props
