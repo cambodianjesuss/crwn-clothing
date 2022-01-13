@@ -20,6 +20,10 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    /**
+     * You can also map the state to props from bottom function
+     * mapStateToProps()
+     */
     const { setCurrentUser } = this.props;
 
     // Set the state of currentUser to the callback result of auth
@@ -64,7 +68,16 @@ class App extends React.Component {
   }
 }
 
-// Grab user from state = this.props.user.currentUser
+/*
+====================================================
+Grab user from state = this.props.user.currentUser
+The state is destructed from the root reducer: 
+'user' key 
+which contains 
+userReducer which contains 'currentUser'
+====================================================
+*/
+
 const mapStateToProps = ({ user }) => ({
   currentUser: user.currentUser,
 });
