@@ -17,7 +17,7 @@ import "./header.styles.scss";
 
 // currentUser passed in as props from 'mapStateToProps'
 // all we are doing here is getting the state, not triggering an actions
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="logo" />
@@ -45,7 +45,7 @@ const Header = ({ currentUser }) => (
       {console.log(currentUser)}
       <CartIcon />
     </div>
-    <CartDropdown />
+    {hidden ? null : <CartDropdown />}
   </div>
 );
 
