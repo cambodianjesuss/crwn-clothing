@@ -78,7 +78,7 @@ userReducer which contains 'currentUser'
 ====================================================
 */
 
-const yy = ({ user }) => ({
+const mapStateToProps = ({ user }) => ({
   currentUser: user.currentUser,
 });
 
@@ -88,4 +88,4 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({ type: "SET_CURRENT_USER", payload: user }), // or setCurrentUser(user)
 });
 
-export default connect(yy, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
