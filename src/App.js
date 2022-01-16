@@ -13,7 +13,7 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 // Since we are providing the action here, we are 'setting' the state to dispatch
 // This action will return return the payload with an action to match update reducer
-import { setCurrentUser } from "./redux/user/user.actions";
+import { setCurrentUser } from "./redux/user/user.actions"; // Refer to dispatch why it's unused
 
 class App extends React.Component {
   // Sign out in case memory leaks et
