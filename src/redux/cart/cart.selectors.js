@@ -1,7 +1,8 @@
 /**
  * Reselect & Create Selectors for state to transforms in memoizatio
  * Receive state from cart-icon.component's mapStateToProps
- *
+ * Actually, it won't save up re-renders, because mapStateToProps does a shallow equality check
+ * with primitive types (intengers) from itemCount, but still good to implement to reduce logic
  */
 
 import { createSelector } from "reselect";
