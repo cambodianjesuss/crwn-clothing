@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 
 import { toggleCartHidden } from "../../redux/cart/cart.actions";
 
@@ -20,11 +21,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 // Selector prop that we should change for memoization  -- remove comment when implemented
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-  itemCount: cartItems.reduce(
-    (accumilatedItems, cartItem) => accumilatedItems + cartItem.quantity,
-    0,
-  ),
+const mapStateToProps = (state) => ({
+  itemCount: selectCartItemsCount(state),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
