@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 // add connect component to provide 'user' state
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
 
 // Import firebase auth from util file
 import { auth } from "../../firebase/firebase.utils";
@@ -17,7 +20,7 @@ import "./header.styles.scss";
 
 // currentUser passed in as props from 'mapStateToProps'
 // all we are doing here is getting the state, not triggering an actions
-const Header = ({ currentUserProp, hiddenProp }) => (
+const Header = ({ currentUser, hidden }) => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="logo" />
@@ -32,7 +35,7 @@ const Header = ({ currentUserProp, hiddenProp }) => (
       {
         // Sign In/Sign Out if currentUser has null signed in
 
-        currentUserProp ? (
+        currentUser ? (
           <div className="option" onClick={() => auth.signOut()}>
             SIGN OUT
           </div>
@@ -42,18 +45,22 @@ const Header = ({ currentUserProp, hiddenProp }) => (
           </Link>
         )
       }
-      {console.log(currentUserProp)}
+      {console.log(currentUser)}
       <CartIcon />
     </div>
-    {hiddenProp ? null : <CartDropdown />}
+    {hidden ? null : <CartDropdown />}
   </div>
 );
 
 // Mapping state props to use it's current data with no actions
 // For clarity, I've added the prop name = this.props.user || this.props.cart
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-  currentUserProp: currentUser,
-  hiddenProp: hidden,
+//
+// Imported createStructuredSelect()
+// It will run the selectors and pass the respected state needed as an object
+// Same as mapStateToProps = (state) => ({ currentUser: selectCurrentUser(state)})
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  hidden: selectCartHidden,
 });
 
 // Using connect middleware to map our state to props
