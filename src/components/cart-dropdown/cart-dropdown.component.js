@@ -1,3 +1,6 @@
+/**
+ * Recieves our state from cart.reducers
+ */
 import React from "react";
 import { connect } from "react-redux";
 
