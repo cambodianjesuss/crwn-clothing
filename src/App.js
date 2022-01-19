@@ -11,6 +11,9 @@ import SignInAndSignUp from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.com
 import Header from "./components/header/header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
+import { createStructuredSelector } from "reselect";
+import { selectCurrentUser } from "./redux/user/user.selectors";
+
 // Since we are providing the action here, we are 'setting' the state to dispatch
 // This action will return return the payload with an action to match update reducer
 
@@ -79,8 +82,8 @@ userReducer which contains 'currentUser'
 ====================================================
 */
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
 });
 
 // Passing setCurrentUser Action to dispatch
