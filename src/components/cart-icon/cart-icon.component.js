@@ -18,6 +18,8 @@ const mapDispatchToProps = (dispatch) => ({
   toggleCartHiddenProp: () => dispatch(toggleCartHidden()), // Attach our prop button to toggleCartHidden Action
 });
 
+// Selector prop that we should change for memoization  -- remove comment when implemented
+
 const mapStateToProps = ({ cart: { cartItems } }) => ({
   itemCount: cartItems.reduce(
     (accumilatedItems, cartItem) => accumilatedItems + cartItem.quantity,
