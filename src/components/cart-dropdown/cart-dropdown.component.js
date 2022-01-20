@@ -1,6 +1,8 @@
 /**
  * Recieves our state from cartItems reducers
- * imported withRouter for onClick button to use history.push and avoid prop drilling
+ * imported withRouter for onClick button to use history.push to
+ * navigate without reloading page since we Route passing down one level from browserrouter
+ * to also avoid prop drilling
  */
 import React from "react";
 import { connect } from "react-redux";
