@@ -37,4 +37,5 @@ const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
 });
 
+// We will connect our props to component first, then pass those into withRouter history => /checkout
 export default withRouter(connect(mapStateToProps)(CartDropdown));
