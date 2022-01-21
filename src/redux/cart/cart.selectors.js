@@ -12,7 +12,7 @@ const selectCart = (state) => state.cart;
 
 // selectCartItems | used to get gather all items in cart
 // createSelector first args takes in an array of selectors [selector/state]
-// second args will take a callback function of the PROPERTY we want out of state (selectorState)
+// second args will take a callback function of the PROPERTY we want out of state (selectorState/ which is cart)
 // and return the piece of the object we passed in from state. => selectorState.someProp
 // returns and object with an array of cartItems
 export const selectCartItems = createSelector(
@@ -30,6 +30,14 @@ export const selectCartItemsCount = createSelector(
       (accumilatedItems, cartItem) => accumilatedItems + cartItem.quantity,
       0,
     ),
+);
+
+export const selectCartTotal = createSelector([selectCartItems], (cartItems) =>
+  cartItems.reduce(
+    (accumilatedItems, cartItem) =>
+      accumilatedItems + cartItem.quantity * cartItem.price,
+    0,
+  ),
 );
 
 export const selectCartHidden = createSelector(
