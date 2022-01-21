@@ -16,7 +16,7 @@ import CustomButton from "../custom-button/custom-button.component";
 import "./cat-dropdown.styles.scss";
 import CartItem from "../cart-item/cart-item.component";
 
-const CartDropdown = ({ cartItems, history }) => (
+const CartDropdown = ({ cartItems, history, dispatch }) => (
   <div className="cart-dropdown">
     <div className="cart-items">
       {cartItems.length ? (
@@ -38,4 +38,6 @@ const mapStateToProps = createStructuredSelector({
 });
 
 // We will connect our props to component first, then pass those into withRouter history => /checkout
+// Also, connect will pass Dispatch as props if it is not supplied in second argument, which is helpful for one off actions to trigger. to check what props are available, just spread ...otherProps in the component
+
 export default withRouter(connect(mapStateToProps)(CartDropdown));
