@@ -7,7 +7,8 @@
 
 import { createSelector } from "reselect";
 
-// Store the slice of state in cache that we want to transform
+// Store the slice of state in cache that we want to transform -- passed from createStructedComponent from mapStateToProps
+
 const selectCart = (state) => state.cart;
 
 // selectCartItems | used to get gather all items in cart
