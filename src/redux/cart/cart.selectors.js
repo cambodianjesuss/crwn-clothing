@@ -33,6 +33,7 @@ export const selectCartItemsCount = createSelector(
     ),
 );
 
+// accumilated is the total + (quantity * price)
 export const selectCartTotal = createSelector([selectCartItems], (cartItems) =>
   cartItems.reduce(
     (accumilatedItems, cartItem) =>
