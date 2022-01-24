@@ -9,7 +9,7 @@ import { createSelector } from "reselect";
 
 // Store the slice of state in cache that we want to transform -- passed from createStructedComponent from mapStateToProps
 
-const selectCart = (state) => state.cart;
+const selectCart = (state) => state.cart; // cart is state from combineReducers
 
 // selectCartItems | used to get gather all items in cart
 // createSelector first args takes in an array of selectors [selector/state]
