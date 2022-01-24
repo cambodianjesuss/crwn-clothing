@@ -27,6 +27,17 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         cartItems: addItemToCart(state.cartItems, action.payload), // Utility function that adds a cart item with quantity
       };
     }
+    /**
+     * We want to return a new cartItems IF the current state.cartItems (spread) doesn't contain the action.payload.id -- so we return a filtered object that doesn't contain it
+     */
+    case CartActionTypes.CLEAR_ITEM_FROM_CART: {
+      return {
+        ...state,
+        cartItems: state.cartItems.filter(
+          (cartItem) => cartItem.id !== action.payload.id,
+        ),
+      };
+    }
     default: {
       return state;
     }
