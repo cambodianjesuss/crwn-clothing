@@ -1,3 +1,13 @@
+/**
+ * Used in Cart Reducer -- cart.reducer.js
+ * CartActionTypes.ADD_ITEM
+ * Where we check if already exists to add the QUANTITY PROPERTY
+ *
+ * @param {*} cartItems | First Argument that recieves previous state.cartItems
+ * @param {*} cartItemToAdd | Second Argument that recieves action.payload of item to add
+ * @returns | Returns cartItems Array
+ */
+
 export const addItemToCart = (cartItems, cartItemToAdd) => {
   // We set a true or false value if the item we want to add already exists
   const existingCartItem = cartItems.find(
