@@ -26,3 +26,28 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
   // If we don't have that item in the cart, we push to it end of array, with a prop QUANTITY to default
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
+
+/**
+ *
+ * @param {*} cartItems Array of cart items | from reducer as current state.cartItems
+ * @param {*} cartItemToRemove the current cart item | cart item action.payload - item ID
+ *
+ */
+export const removeItemFromCart = (cartItems, cartItemToRemove) => {
+  // Store if cart item exists as we iterate each item's ID to match with the action.payload item ID
+  const existingCartItem = cartItems.find(
+    (cartItem) => cartItem.id === cartItemToRemove.id,
+  );
+
+  // If the quantity is already 1, we will completely filter out that item and return new cartItems array without it
+  if (existingCartItem.quantity === 1)
+    return cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
+
+  // By default we will return a new map cartItems to match if the cartItem.ID matches
+  // cartItemToRemove.ID, then we spread cartItem properties, then decrement the quantity
+  return cartItems.map((cartItem) =>
+    cartItem.id === cartItemToRemove.id
+      ? { ...cartItem, quantity: cartItem.quantity - 1 }
+      : cartItem,
+  );
+};
