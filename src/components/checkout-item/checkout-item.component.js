@@ -22,6 +22,14 @@ const CheckoutItem = ({ cartItem, clearItem }) => {
   );
 };
 
+/**
+ * clearItem action
+ * Pass cartItem from onClick handler
+ * Pass the item and return dispatch
+ * clearItemFromCart reducer takes previous state.cartItems array []
+ * Then filter that item and return a new array that doesn't include action.payload.id
+ */
+
 const mapDispatchToProps = (dispatch) => ({
   clearItem: (item) => dispatch(clearItemFromCart(item)),
 });
