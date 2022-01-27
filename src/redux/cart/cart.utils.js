@@ -1,4 +1,5 @@
-/**
+/**\
+ * Add Item to Cart
  * Used in Cart Reducer -- cart.reducer.js
  * CartActionTypes.ADD_ITEM
  * Where we check if already exists to add the QUANTITY PROPERTY
@@ -28,7 +29,7 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 };
 
 /**
- *
+ * Remove Cart Items
  * @param {*} cartItems Array of cart items | from reducer as current state.cartItems
  * @param {*} cartItemToRemove the current cart item | cart item action.payload - item ID
  *

@@ -1,3 +1,9 @@
+/**
+ * Cart Reducers
+ * All cart items will have a unique ID which we can add/remove and compare with it's ID
+ * We separated state logic/mutations in a sepearte utility file to keep our reducers easier to read
+ */
+
 import CartActionTypes from "./cart.types";
 import { addItemToCart, removeItemFromCart } from "./cart.utils";
 const INITIAL_STATE = {
