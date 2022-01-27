@@ -1,7 +1,7 @@
 /**
  * Redux Persist
  * Import persistStore module to store redux state in local storage
- * We export store seperate to pass into persistStore() function
+ * We export both regular stock and persistor store as an export default
  */
 
 import { createStore, applyMiddleware } from "redux";
@@ -16,4 +16,4 @@ export const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 export const persistor = persistStore(store);
 
-export default store;
+export default { store, persistor };
