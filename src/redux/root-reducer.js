@@ -1,5 +1,10 @@
 /**
- *
+ * Redux Persist adds store features that retain after page refresh
+ * Storage lib sets the store to utilize localStorage
+ * localStorage stringify's state object provided by the whitelist config
+ * To get the localStorage string, the library converts string back to json
+ * JSON.stringify() will wrap the object in a string
+ * JSON.parse() will take that string and turn it to an object
  */
 
 import { combineReducers } from "redux";
