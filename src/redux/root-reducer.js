@@ -33,6 +33,8 @@ const rootReducer = combineReducers({
   cart: cartReducer,
 });
 
+// persistReducer takes a config object for instructions
+// Then it passes the combinedReducers to copy the whatever state is whitelisted from the config
 export default persistReducer(persistConfig, rootReducer);
 
 /**
