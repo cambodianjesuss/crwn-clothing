@@ -1,3 +1,10 @@
+/**
+ * Config files for react-persist
+ * store.js
+ * root-reducer.js
+ * index.js (entry point)
+ */
+
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";

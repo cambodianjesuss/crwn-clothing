@@ -4,6 +4,13 @@
  * We export both regular stock and persistor store as an export default
  */
 
+/**
+ * Config files for react-persist
+ * store.js
+ * root-reducer.js
+ * index.js (entry point)
+ */
+
 import { createStore, applyMiddleware } from "redux";
 import { persistStore } from "redux-persist";
 import logger from "redux-logger";

@@ -5,6 +5,11 @@
  * To get the localStorage string, the library converts string back to json
  * JSON.stringify() will wrap the object in a string
  * JSON.parse() will take that string and turn it to an object
+ *
+ * Config files
+ * store.js
+ * root-reducer.js
+ * index.js (entry point)
  */
 
 import { combineReducers } from "redux";
