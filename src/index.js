@@ -8,8 +8,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
+import { Provider } from "react-redux"; // store provider
+import { PersistGate } from "redux-persist/integration/react"; // react-persist to provide app with persisted data
 
 import { store, persistor } from "./redux/store";
 
