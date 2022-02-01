@@ -5,12 +5,6 @@
  * to also avoid prop drilling
  */
 
-/**
- * Config files for react-persist
- * store.js
- * root-reducer.js
- * index.js (entry point)
- */
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom"; // Push our history to /checkout
