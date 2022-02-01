@@ -18,7 +18,8 @@ import storage from "redux-persist/lib/storage";
 
 import userReducer from "./user/user.reducer";
 import cartReducer from "./cart/cart.reducer";
-import directoryReducers from "./directory/directory.reducer";
+import directoryReducer from "./directory/directory.reducer";
+import { shopReducer } from "./shop/shop.reducer";
 
 /**
  * Persist Config
@@ -37,7 +38,8 @@ const persistConfig = {
 const rootReducer = combineReducers({
   user: userReducer, // Object from which we set it's state - the return from userReducer is currentUser
   cart: cartReducer,
-  directory: directoryReducers,
+  directory: directoryReducer,
+  shop: shopReducer,
 });
 
 // persistReducer takes a config object for instructions
