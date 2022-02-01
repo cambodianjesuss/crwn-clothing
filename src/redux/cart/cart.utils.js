@@ -35,7 +35,7 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
  *
  */
 export const removeItemFromCart = (cartItems, cartItemToRemove) => {
-  // Store if cart item exists as we iterate each item's ID to match with the action.payload item ID
+  // Store if cart item exists as we iterate each item's ID to match with the action.payload item ID -- Compairing current state until it finds a ID that matches, when it does, set to true
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === cartItemToRemove.id,
   );
