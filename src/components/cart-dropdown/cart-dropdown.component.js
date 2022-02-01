@@ -47,7 +47,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
 );
 
 const mapStateToProps = createStructuredSelector({
-  cartItems: selectCartItems,
+  cartItems: selectCartItems, // We could have just mapped state.cart without using reselect
 });
 
 // We will connect our props to component first, then pass those into withRouter history => /checkout
