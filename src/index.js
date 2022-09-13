@@ -2,7 +2,8 @@
  * Config files for react-persist
  * store.js
  * root-reducer.js
- * index.js (entry point)
+ * index.js (entry point
+ * 
  */
 
 import React from "react";
