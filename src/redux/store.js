@@ -2,6 +2,7 @@
  * Redux Persist
  * Import persistStore module to store redux state in local storage
  * We export both regular stock and persistor store as an export default
+ * just testing discord hook
  */
 
 /**
